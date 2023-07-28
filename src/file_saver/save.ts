@@ -24,7 +24,7 @@ export class SaveManager {
     constructor(game: Game) {
         SaveManager.savePath = `${game.pluginRootPath}/Saved`;
         SaveManager.isBuilt = true;
-        fsp.mkdir(SaveManager.savePath, { recursive: true });
+        SaveManager.saveGame(game);
     }
 
     public static async saveGame(game: Game): Promise<void | Error> {
