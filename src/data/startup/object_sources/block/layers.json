@@ -1,0 +1,714 @@
+{
+    "Block": {
+    },
+    "NaturalBlock": {
+        "Sky":{
+            "name":"Sky",
+            "visibility":false,
+            "material_index":0,
+            "material_intensity":0,
+            "color":[0,0,0,0],
+            "flags":["invulnerable"],
+            "generator_data":[
+                {
+                    "surfaces": ["*"],
+                    "abundance": 1,
+                    "depth": -1,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ]
+        },"Mantle":{
+            "name":"Mantle",
+            "material_index":2,
+            "material_intensity":6,
+            "color":[255,190,41,0],
+            "flags":["invulnerable"],
+            "generator_data":[
+                {
+                    "surfaces": ["*"],
+                    "abundance": 1,
+                    "depth": 5000,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ]
+        }
+    },
+    "MineableBlock": {
+        "Dirt":{
+            "name":"Dirt",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[89, 55, 27, 255],
+            "flags":[],
+            "health": 10,
+            "minimum_level": 0,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 1,
+                    "depth": 0,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Firm Dirt":{
+            "name":"Firm Dirt",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[113,80,52,255],
+            "flags":[],
+            "health": 15,
+            "minimum_level": 0,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 30,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Dense Dirt":{
+            "name":"Dense Dirt",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[84,63,44,255],
+            "flags":[],
+            "health": 20,
+            "minimum_level": 0,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 50,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Compact Dirt":{
+            "name":"Compact Dirt",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[60,43,34,255],
+            "flags":[],
+            "health": 25,
+            "minimum_level": 0,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 70,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Rock":{
+            "name":"Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[83,76,74,255],
+            "flags":[],
+            "health": 40,
+            "minimum_level": 5,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 100,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Firm Rock":{
+            "name":"Firm Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[119,112,109,255],
+            "flags":[],
+            "health": 50,
+            "minimum_level": 5,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 150,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Dense Rock":{
+            "name":"Dense Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[155,155,151,255],
+            "flags":[],
+            "health": 60,
+            "minimum_level": 5,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 200,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Compact Rock":{
+            "name":"Compact Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[130,130,130,255],
+            "flags":[],
+            "health": 70,
+            "minimum_level": 5,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 250,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Bedrock":{
+            "name":"Bedrock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[136,118,105,255],
+            "flags":[],
+            "health": 100,
+            "minimum_level": 25,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 300,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Firm Bedrock":{
+            "name":"Firm Bedrock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[96,81,70,255],
+            "flags":[],
+            "health": 150,
+            "minimum_level": 25,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 400,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Dense Bedrock":{
+            "name":"Dense Bedrock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[38,29,23,255],
+            "flags":[],
+            "health": 200,
+            "minimum_level": 25,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 500,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Compact Bedrock":{
+            "name":"Compact Bedrock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[38,29,23,255],
+            "flags":[],
+            "health": 250,
+            "minimum_level": 25,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 600,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Metallic Rock":{
+            "name":"Metallic Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[41,43,51,255],
+            "flags":[],
+            "health": 500,
+            "minimum_level": 50,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 700,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Firm Metallic Rock":{
+            "name":"Firm Metallic Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[30,32,42,255],
+            "flags":[],
+            "health": 600,
+            "minimum_level": 50,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 775,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Dense Metallic Rock":{
+            "name":"Dense Metallic Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[15,15,23,255],
+            "flags":[],
+            "health": 700,
+            "minimum_level": 50,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 850,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Compact Metallic Rock":{
+            "name":"Compact Metallic Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[38,41,56,255],
+            "flags":[],
+            "health": 800,
+            "minimum_level": 50,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 925,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Depths I":{
+            "name":"Depths I",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[24,26,24,255],
+            "flags":[],
+            "health": 1000,
+            "minimum_level": 101,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 1000,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Firm Depths I":{
+            "name":"Firm Depths I",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[18,20,18,255],
+            "flags":[],
+            "health": 1200,
+            "minimum_level": 101,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 1250,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Dense Depths I":{
+            "name":"Dense Depths I",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[9,9,9,255],
+            "flags":[],
+            "health": 1500,
+            "minimum_level": 101,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 1500,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Compact Depths I":{
+            "name":"Compact Depths I",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[0,0,0,255],
+            "flags":[],
+            "health": 1750,
+            "minimum_level": 101,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 1750,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Depths II":{
+            "name":"Depths II",
+            "material_index":2,
+            "material_intensity":0,
+            "color":[0,0,0,255],
+            "flags":[],
+            "health": 2000,
+            "minimum_level": 150,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 2000,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Firm Depths II":{
+            "name":"Firm Depths II",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[0,0,0,255],
+            "flags":[],
+            "health": 2250,
+            "minimum_level": 150,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 2500,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Dense Depths II":{
+            "name":"Dense Depths II",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[20,20,20,255],
+            "flags":[],
+            "health": 2500,
+            "minimum_level": 150,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 3000,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Compact Depths II":{
+            "name":"Compact Depths II",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[40,40,40,255],
+            "flags":[],
+            "health": 2750,
+            "minimum_level": 150,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0,
+                    "depth": 4000,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["layer"]
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        }
+    }
+}

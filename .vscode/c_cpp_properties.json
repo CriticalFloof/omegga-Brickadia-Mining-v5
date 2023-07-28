@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "../../../.nvm/versions/node/v18.16.0/include",
+                "/home/criticalfloof-brickadia/.nvm/versions/node/v18.16.0/include/node"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

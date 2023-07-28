@@ -1,0 +1,25 @@
+{
+  "name": "Mine-Test",
+  "description": "A typed safe Omegga plugin.",
+  "author": "Critical Floof",
+  "config": {
+    "Restricted role": {
+      "description": "Restricts players with this role from using some commands that can be spammed. Example: /msg",
+      "type": "role",
+      "default": "Admin"
+    },
+    "Trusted role": {
+      "description": "Allows players with this role to utilize commands with elevated permissions.",
+      "type": "role",
+      "default": "Admin"
+    },
+    "Developer role": {
+      "description": "Same as Trusted role but with the addition of potentially dangerous commands, which is locked behind the safety command /dev_enable",
+      "type": "role",
+      "default": "Admin"
+    }
+  },
+  "commands": [
+
+  ]
+}

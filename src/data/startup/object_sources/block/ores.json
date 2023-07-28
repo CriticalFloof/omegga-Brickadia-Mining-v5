@@ -1,0 +1,267 @@
+{
+    "Block": {
+        "Invulnerable Concrete":{
+            "name":"Invulnerable Concrete",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[100,100,100,255],
+            "flags":["invulnerable"]
+        }
+    },
+    "NaturalBlock": {
+        "Air":{
+            "generator_data":[
+                {
+                    "surfaces": ["*"],
+                    "abundance": 0,
+                    "depth": 0,
+                    "size": 0,
+                    "extent": 0,
+                    "flags": ["gas"]
+                }
+            ],
+            "name":"Air",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[0,0,0,0],
+            "flags":["no_generate"]
+        }
+    },
+    "MineableBlock": {
+        "Iron":{
+            "name":"Iron",
+            "material_index":1,
+            "material_intensity":10,
+            "color":[220,220,220,255],
+            "flags":[],
+            "health": 50,
+            "minimum_level": 5,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.0025,
+                    "depth": 8000,
+                    "size": 0,
+                    "extent": 8000,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.005,
+                    "depth": 4000,
+                    "size": 0,
+                    "extent": 4000,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.005,
+                    "depth": 2000,
+                    "size": 0,
+                    "extent": 2000,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.01,
+                    "depth": 1000,
+                    "size": 0,
+                    "extent": 500,
+                    "flags": []
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Iron ore":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Malachite":{
+            "name":"Malachite",
+            "material_index":0,
+            "material_intensity":10,
+            "color":[11,218,81,255],
+            "flags":[],
+            "health": 40,
+            "minimum_level": 3,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.0005,
+                    "depth": 5000,
+                    "size": 0,
+                    "extent": 5000,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.0005,
+                    "depth": 500,
+                    "size": 0,
+                    "extent": 500,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.001,
+                    "depth": 100,
+                    "size": 0,
+                    "extent": 100,
+                    "flags": []
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Copper ore":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        },
+        "Magma":{
+            "name":"Magma",
+            "material_index":2,
+            "material_intensity":4,
+            "color":[150,100,80,255],
+            "flags":[],
+            "components":{
+                "BCD_PointLight":{
+                    "bMatchBrickShape": true,
+                    "Brightness": 100.0,
+                    "Radius": 250.0,
+                    "Color": [255,200,50,255],
+                    "bUseBrickColor": false,
+                    "bCastShadows": false
+                }
+            },
+            "health": 10,
+            "minimum_level": 0,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.0005,
+                    "depth": 1550,
+                    "size": 0,
+                    "extent": 50,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.002,
+                    "depth": 1750,
+                    "size": 0,
+                    "extent": 150,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.005,
+                    "depth": 2200,
+                    "size": 0,
+                    "extent": 300,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.01,
+                    "depth": 4000,
+                    "size": 0,
+                    "extent": 1500,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.025,
+                    "depth": 5500,
+                    "size": 0,
+                    "extent": 2250,
+                    "flags": []
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "destroy", "parameters":{"replace" : "Cooled Magma" }}
+            ]
+        },
+        "Cooled Magma":{
+            "name":"Cooled Magma",
+            "material_index":2,
+            "material_intensity":0,
+            "color":[140,60,40,255],
+            "flags":[],
+            "components":{
+                "BCD_PointLight":{
+                    "bMatchBrickShape": true,
+                    "Brightness": 40.0,
+                    "Radius": 100.0,
+                    "Color": [200,100,20,255],
+                    "bUseBrickColor": false,
+                    "bCastShadows": false
+                }
+            },
+            "health": 10,
+            "minimum_level": 0,
+            "generator_data":[
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.001,
+                    "depth": 625,
+                    "size": 0,
+                    "extent": 375,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.005,
+                    "depth": 1500,
+                    "size": 0,
+                    "extent": 500,
+                    "flags": []
+                },
+                {
+                    "surfaces": ["Earth"],
+                    "abundance": 0.002,
+                    "depth": 2250,
+                    "size": 0,
+                    "extent": 250,
+                    "flags": []
+                }
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "destroy", "parameters":{"replace" : "Igneous Rock" }}
+            ]
+        }, 
+        "Igneous Rock":{
+            "name":"Igneous Rock",
+            "material_index":0,
+            "material_intensity":0,
+            "color":[100,30,20,255],
+            "flags":[],
+            "health": 10,
+            "minimum_level": 0,
+            "generator_data":[
+
+            ],
+            "on_hit": [
+                {"function_name": "decrement_health", "parameters":{"amount" : 1 }}
+            ],
+            "on_mine": [
+                {"function_name": "return_items", "parameters":{"loot_table" : {
+                    "Dirt":{"amount":1, "chance":1}
+                }}},
+                {"function_name": "destroy", "parameters":{"replace" : "Air" }}
+            ]
+        }
+    }
+}
