@@ -20,7 +20,7 @@ remove it entirely if it is unnecessary.
 
 ## Install
 
-`omegga install gh:Critical Floof/Mine-Test`
+`omegga install gh:Critical Floof/Brickadia-Mining-v5`
 
 _TODO: more steps...?_
 
