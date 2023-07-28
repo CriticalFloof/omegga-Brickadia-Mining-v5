@@ -22,6 +22,8 @@ remove it entirely if it is unnecessary.
 
 `omegga install gh:CriticalFloof/Brickadia-Mining-v5`
 
+Once installed, go over to the plugin's setup.sh and run `bash setup.sh`
+
 _TODO: more steps...?_
 
 ## Usage
