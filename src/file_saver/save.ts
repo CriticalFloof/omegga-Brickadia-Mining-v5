@@ -156,6 +156,7 @@ export class LoadManager {
             return;
         });
 
+        if (fileContents == undefined) return;
         let player_literal: Player = JSON.parse(fileContents);
         //Get an instance of omeggaplayer from the omegga player object literal
         player_literal.player_object = Omegga.getPlayer(player_literal.player_object.name);
